@@ -37,7 +37,12 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0;
 }
@@ -114,9 +119,11 @@ body.template-dark {
     align-items: center;
     max-width: 50%;
 }
+
 .logo-img {
     width: 4rem;
 }
+
 .logo-ttl {
     font-size: 2rem;
     color: var(--primary-color);
@@ -131,13 +138,22 @@ body.template-dark {
     color: var(--primary-color);
     cursor: pointer;
 }
+.nav-arrow{
+    display: none;
+    font-size: 3rem;
+    color: var(--primary-color);
+    cursor: pointer; 
+}
 
 .nav-list {
     display: none;
     align-items: center;
     justify-content: center;
     gap: 3rem;
+   
 }
+
+
 
 .nav-link {
     display: inline-block;
@@ -149,7 +165,7 @@ body.template-dark {
 
 .nav-link::after {
     content: "";
-    display: block;
+    display: none;
     height: .25rem;
     width: 0;
     position: absolute;
@@ -159,17 +175,42 @@ body.template-dark {
     transition: width .3s ease;
 }
 
-.nav-link.active::after, .nav-link:hover::after  {
+.nav-link.active::after,
+.nav-link:hover::after {
     width: 100%;
 }
 
 .nav-link.active {
     color: var(--transparent-white);
 }
+@media screen and (max-width:768px) {
+body{
+    overflow: scroll;
+}
+.nav-list{
+    position: absolute; 
+    top:6rem;
+    width:100vw;
+    height:100vh;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.nav-item {
+    background-color: rgba(0, 0, 0, .5);
+    border-bottom: 1px solid var(--transparent-white);
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    text-align: center;
+}
+}
 
 @media screen and (min-width: 768px) {
     .nav-burger {
-        display: none; 
+        display: none;
+    }
+    .nav-arrow{
+        display: none;
     }
     .nav-list {
         display: flex;
@@ -212,9 +253,10 @@ body.template-dark {
     text-transform: uppercase;
     text-align: center;
     position: relative;
-    z-index:2;
+    z-index: 2;
 }
-.hero-ttl > p {
+
+.hero-ttl>p {
     line-height: min(7vw, 6rem);
 }
 
@@ -233,7 +275,7 @@ body.template-dark {
     bottom: 2rem;
     transition: background var(--transition-duration), transform var(--transition-duration);
     transition-timing-function: var(--transition-function);
-    
+
 }
 
 .button-scroll:hover {
@@ -250,11 +292,13 @@ body.template-dark {
     line-height: 1.2;
     margin-bottom: 7rem;
 }
+
 .title-top {
     font-size: 1.5rem;
     text-transform: uppercase;
     color: var(--secondary-color);
 }
+
 .title-main {
     font-size: 3rem;
 }
@@ -265,24 +309,29 @@ body.template-dark {
 .about {
     margin-bottom: 2rem;
 }
+
 .about-text {
     padding: 2rem;
 }
 
 .about-text-xl {
     font-size: 3rem;
-    font-weight: bold;  
+    font-weight: bold;
 }
+
 .about-text-highlight {
     display: block;
     color: var(--secondary-color);
     text-decoration: underline;
 }
-.about-ttl-sm, .about-txt-sm {
+
+.about-ttl-sm,
+.about-txt-sm {
     font-size: 1.5rem;
     font-weight: normal;
     line-height: 2;
 }
+
 .about-txt-sm {
     color: var(--light-grey);
 }
@@ -344,6 +393,7 @@ body.template-dark {
 .card:hover {
     background-color: #000;
 }
+
 .card:hover .card-ttl {
     color: var(--secondary-color);
 }
@@ -355,7 +405,8 @@ body.template-dark {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
 }
-.portfolio-grid > li {
+
+.portfolio-grid>li {
     overflow: hidden;
 }
 
@@ -363,16 +414,18 @@ body.template-dark {
     width: 100%;
 }
 
-@media screen and (min-width: 520px) and  (max-width: 768px) {
+@media screen and (min-width: 520px) and (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: 19vw;
     }
-    .portfolio-grid > li:nth-child(1) {
+
+    .portfolio-grid>li:nth-child(1) {
         grid-column-start: span 2;
         grid-row-start: span 2;
     }
-    .portfolio-grid > li:nth-child(5) {
+
+    .portfolio-grid>li:nth-child(5) {
         grid-column-start: span 2;
         grid-row-start: span 2;
     }
@@ -384,17 +437,19 @@ body.template-dark {
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: min(15vw, 18em);
     }
-    .portfolio-grid > li:nth-child(1) {
+
+    .portfolio-grid>li:nth-child(1) {
         grid-column-start: span 2;
         grid-row-start: span 2;
     }
-    .portfolio-grid > li:nth-child(4) {
+
+    .portfolio-grid>li:nth-child(4) {
         grid-column-start: span 2;
         grid-row-start: span 2;
     }
 }
 
-.portfolio-grid > li {
+.portfolio-grid>li {
     position: relative;
     font-size: 0;
 }
@@ -418,7 +473,7 @@ body.template-dark {
     padding: 1rem;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #fff; 
+    color: #fff;
     background-color: var(--dark-grey-transparent);
 }
 
@@ -428,12 +483,14 @@ body.template-dark {
         opacity: 0;
         transition: opacity var(--transition-duration) var(--transition-function);
     }
-    .portfolio-block:hover {    
+
+    .portfolio-block:hover {
         opacity: 1;
     }
+
     .portfolio-brand {
         font-size: 2rem;
-        color: #fff; 
+        color: #fff;
     }
 }
 
@@ -475,7 +532,8 @@ body.template-dark {
     transition-timing-function: var(--transition-function);
     color: #fff;
 }
-.contact-text:focus  {
+
+.contact-text:focus {
     background-color: var(--light-grey);
     color: #000;
 }
@@ -503,7 +561,7 @@ body.template-dark {
     background-color: var(--secondary-color);
     transition: background var(--transition-duration) var(--transition-function);
     border-radius: .5rem;
-}   
+}
 
 .button:hover {
     background-color: var(--primary-color);
@@ -550,17 +608,20 @@ body.template-dark {
     .footer {
         padding: 1rem 2rem;
     }
-    .hero-banner, .footer {
+
+    .hero-banner,
+    .footer {
         background-image: url('../img/hero-bg-xl.jpg');
     }
 }
 
 /* FOOTER - LEGAL */
 
-.footer-legal > li {
+.footer-legal>li {
     display: inline;
 }
-.footer-legal > li:not(:last-child)::after {
+
+.footer-legal>li:not(:last-child)::after {
     content: "|";
     padding: 0 1rem;
 }
@@ -624,11 +685,11 @@ body.template-dark {
     .bg-facebook:hover {
         background-color: var(--facebook-color);
     }
-    
+
     .bg-twitter:hover {
         background-color: var(--twitter-color);
     }
-    
+
     .bg-instagram:hover {
         background-color: var(--instagram-color);
     }
