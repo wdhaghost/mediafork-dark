@@ -144,15 +144,19 @@ body.template-dark {
     color: var(--primary-color);
     cursor: pointer; 
 }
-
+.nav-arrow.active{
+    display: block;
+}
 .nav-list {
     display: none;
+    
+}
+.nav-list.active{
+    display: block;
     align-items: center;
     justify-content: center;
     gap: 3rem;
-   
 }
-
 
 
 .nav-link {
@@ -184,8 +188,8 @@ body.template-dark {
     color: var(--transparent-white);
 }
 @media screen and (max-width:768px) {
-body{
-    overflow: scroll;
+body.active{
+    overflow: hidden;
 }
 .nav-list{
     position: absolute; 
