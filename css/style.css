@@ -154,7 +154,7 @@ body.template-dark {
     display: none;
 }
 .nav-list {
-    display: none;
+    display: block;
     align-items: center;
     justify-content: center;
     gap: 3rem;
@@ -164,6 +164,7 @@ body.template-dark {
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    top:6rem   
 }
 
 
@@ -201,13 +202,14 @@ body.active{
 }
 .nav-list{
     position: absolute; 
-    top:6rem;
+    top:-100rem;
     width:100vw;
     height:100vh;
     left: 0;
     background-color: rgba(0, 0, 0, .5);
+    transition-property: all;
+    transition-duration: .5s;
 }
-
 .nav-item {
     background-color: rgba(0, 0, 0, .5);
     border-bottom: 1px solid var(--transparent-white);
@@ -226,6 +228,7 @@ body.active{
     }
     .nav-list {
         display: flex;
+        position: relative; 
     }
 }
 
