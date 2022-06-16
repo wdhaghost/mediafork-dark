@@ -134,22 +134,30 @@ body.template-dark {
 /* HEADER -> NAV */
 
 .nav-burger {
+    display:block;
     font-size: 3rem;
     color: var(--primary-color);
     cursor: pointer;
 }
-.nav-arrow{
-    display: none;
+.nav-burger.desac{
+    display:none;
+}
+
+
+.nav-arrow.active{
+    display: block;
     font-size: 3rem;
     color: var(--primary-color);
     cursor: pointer; 
 }
-.nav-arrow.active{
-    display: block;
+.nav-arrow{
+    display: none;
 }
 .nav-list {
     display: none;
-    
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
 }
 .nav-list.active{
     display: block;
