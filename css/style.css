@@ -201,7 +201,8 @@ body.active{
     overflow: hidden;
 }
 .nav-list{
-    position: absolute; 
+    position: absolute;
+    z-index: 1; 
     top:-100rem;
     width:100vw;
     height:100vh;
