@@ -164,7 +164,7 @@ body.template-dark {
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    top:6rem   
+    top:calc(6rem)  ; 
 }
 
 
