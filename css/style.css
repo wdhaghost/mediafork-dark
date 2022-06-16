@@ -90,6 +90,7 @@ body.template-dark {
 
 .section {
     margin-bottom: 7rem;
+    position: relative;
 }
 
 
@@ -194,7 +195,6 @@ body.template-dark {
     }
     .nav-list{
     position: absolute;
-    z-index: 1; 
     top:-100rem;
     width:100vw;
     height:100vh;
@@ -373,7 +373,6 @@ body.template-dark {
     grid-gap: 2rem;
     padding: 0 2rem;
 }
-
 @media screen and (min-width: 768px) {
     .cards-list {
         grid-template-columns: repeat(4, 1fr);
@@ -414,6 +413,49 @@ body.template-dark {
     color: var(--secondary-color);
 }
 
+.modal{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+.modal-content{
+    position: absolute;
+    top:5%;
+    left:10%;
+    width:80%;
+    height: 90%;    
+    background: #000;
+}
+@media screen and (min-width: 768px) {
+    .modal-content{
+        left:5%;
+        width:90%;
+        height: 90%;
+    }
+    }
+
+.modal-title{
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.2; 
+    text-align: center;
+    margin: 20% 0;
+    color: var(--secondary-color);
+}
+@media screen and (min-width: 768px) {
+    .modal-title{
+        margin:5% 0
+    }
+}
+.modal-text{
+    font-size: 1rem;
+   
+    text-align: center;
+}
 /* PORTFOLIO */
 
 .portfolio-grid {
