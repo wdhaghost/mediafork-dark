@@ -414,7 +414,7 @@ body.template-dark {
 }
 
 .modal{
-    display: block;
+    display: none;
     position: absolute;
     z-index: 1;
     top:0;
@@ -422,6 +422,10 @@ body.template-dark {
     height:100%;
     background-color: rgba(0, 0, 0, .5);
 }
+.modal.active{
+    display: block;
+}
+
 .modal-content{
     display: flex;
     flex-direction: column;

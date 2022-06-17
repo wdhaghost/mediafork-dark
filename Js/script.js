@@ -19,15 +19,25 @@ arrow.addEventListener('click', function (event) {
     document.body.classList.toggle("active")
   }
   )
+  
 for (const link of navLink) {
   link.addEventListener('click', function (event) {
     navList.classList.remove("active")
     arrow.classList.remove("active")
     burger.classList.remove("desac")
     document.body.classList.remove("active")
+    
   }
   )
   
 }
 
+// modal service
+const cards=document.querySelectorAll(".card")
+const cardModal=document.getElementById("card-modal")
+for (const card of cards) {
+ card.addEventListener('click',function(event){
+  cardModal.classList.add("active")
   
+}) 
+}
