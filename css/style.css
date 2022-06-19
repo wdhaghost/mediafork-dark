@@ -441,7 +441,7 @@ body.template-dark {
 }
 @media screen and (min-width: 768px) {
 .modal-img{
-margin:4% -3%;
+margin:4% 2%;
 width: auto;
 height: 80%;
 }
