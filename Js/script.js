@@ -33,12 +33,33 @@ for (const link of navLink) {
 }
 
 // modal service
+
 const cards=document.querySelectorAll(".card")
-const cardModal=document.getElementById("card-modal")
-const cardModalTitle=document.getElementById("card-modal-title")
-const cardModalTxt=document.getElementById("card-modal-txt")
-const cardModalImg=document.getElementById("card-modal-img")
-const cardModalContent=document.querySelector(".modal-content")
+const cardModal=document.createElement("div")
+cardModal.classList.add("modal")
+const cardModalBg=document.createElement("div")
+cardModalBg.classList.add("modal-bg")
+const cardModalContent=document.createElement("div")
+cardModalContent.classList.add("modal-content")
+const aboutUs=document.getElementById("services")
+const cardModalTitle=document.createElement("h3")
+cardModalTitle.classList.add("modal-title")
+const cardModalTxt=document.createElement("p")
+cardModalTxt.classList.add("modal-text")
+const closeBtn=document.createElement("button")
+closeBtn.innerHTML="<i class=\"fa fa-times\" aria-hidden=\"true\"></i>"
+closeBtn.classList.add("close-button")
+const cardModalImg=document.createElement("img")
+cardModalImg.classList.add("modal-img")
+
+cardModalContent.appendChild(closeBtn)
+cardModalContent.appendChild(cardModalTitle)
+cardModalContent.appendChild(cardModalTxt)
+cardModalBg.appendChild(cardModalContent)
+cardModalBg.appendChild(cardModalImg)
+cardModal.appendChild(cardModalBg)
+aboutUs.appendChild(cardModal)
+
 
 function displayModal(){
   cardModal.classList.toggle("active")
@@ -57,6 +78,3 @@ for (const card of cards) {
  card.addEventListener("click",displayModal)
   
 }
-
-
-
