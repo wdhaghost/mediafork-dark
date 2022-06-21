@@ -53,7 +53,6 @@ function displayModal(){
   cardModalTitle.innerText=this.dataset.title
   cardModalTxt.innerHTML=this.dataset.description
   cardModalImg.src=this.dataset.img
-  console.log("ok")
 }
 
 
