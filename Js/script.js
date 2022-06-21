@@ -34,31 +34,18 @@ for (const link of navLink) {
 
 // modal service
 
-const cards=document.querySelectorAll(".card")
-const cardModal=document.createElement("div")
-cardModal.classList.add("modal")
-const cardModalBg=document.createElement("div")
-cardModalBg.classList.add("modal-bg")
-const cardModalContent=document.createElement("div")
-cardModalContent.classList.add("modal-content")
-const aboutUs=document.getElementById("services")
-const cardModalTitle=document.createElement("h3")
-cardModalTitle.classList.add("modal-title")
-const cardModalTxt=document.createElement("p")
-cardModalTxt.classList.add("modal-text")
-const closeBtn=document.createElement("button")
-closeBtn.innerHTML="<i class=\"fa fa-times\" aria-hidden=\"true\"></i>"
-closeBtn.classList.add("close-button")
-const cardModalImg=document.createElement("img")
-cardModalImg.classList.add("modal-img")
 
-cardModalContent.appendChild(closeBtn)
-cardModalContent.appendChild(cardModalTitle)
-cardModalContent.appendChild(cardModalTxt)
-cardModalBg.appendChild(cardModalContent)
-cardModalBg.appendChild(cardModalImg)
-cardModal.appendChild(cardModalBg)
-aboutUs.appendChild(cardModal)
+
+
+const aboutUs=document.getElementById("services")
+const modal="<div id=\"modal-card\"class=\"modal\"><div class=\"modal-bg\"><div id=\"modal-content\" class=\"modal-content\"><button class=\"close-button\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button><h3 id=\"modal-card-title\" class=\"modal-title\"></h3><p id=\"modal-card-txt\" class=\"modal-text\"></p></div><img id=\"modal-card-img\"class=\"modal-img\" src=\"\"></div></div>"
+aboutUs.innerHTML+=modal
+
+const cardModal=document.getElementById("modal-card")
+const cardModalTitle=document.getElementById("modal-card-title")
+const cardModalTxt=document.getElementById("modal-card-txt")
+const cardModalImg=document.getElementById("modal-card-img")
+const cardModalContent=document.getElementById("modal-content")
 
 
 function displayModal(){
@@ -66,15 +53,17 @@ function displayModal(){
   cardModalTitle.innerText=this.dataset.title
   cardModalTxt.innerHTML=this.dataset.description
   cardModalImg.src=this.dataset.img
-  
+  console.log("ok")
 }
 
-cardModalContent.addEventListener("click",function(event){
- cardModal.classList.toggle("active")
- event.stopPropagation() 
-})
 
+const cards=document.querySelectorAll(".card")
 for (const card of cards) {
  card.addEventListener("click",displayModal)
   
 }
+cardModalContent.addEventListener("click",function(event){
+  
+ cardModal.classList.toggle("active")
+ event.stopPropagation() 
+})
