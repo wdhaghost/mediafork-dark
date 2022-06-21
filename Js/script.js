@@ -33,10 +33,7 @@ for (const link of navLink) {
 }
 
 // modal service
-
-
-
-
+//div created and added to the HTML
 const aboutUs=document.getElementById("services")
 const modal="<div id=\"modal-card\"class=\"modal\"><div class=\"modal-bg\"><div id=\"modal-content\" class=\"modal-content\"><button class=\"close-button\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button><h3 id=\"modal-card-title\" class=\"modal-title\"></h3><p id=\"modal-card-txt\" class=\"modal-text\"></p></div><img id=\"modal-card-img\"class=\"modal-img\" src=\"\"></div></div>"
 aboutUs.innerHTML+=modal
@@ -47,7 +44,7 @@ const cardModalTxt=document.getElementById("modal-card-txt")
 const cardModalImg=document.getElementById("modal-card-img")
 const cardModalContent=document.getElementById("modal-content")
 
-
+//This function add .active to modal class and get the data from the card
 function displayModal(){
   cardModal.classList.toggle("active")
   cardModalTitle.innerText=this.dataset.title
@@ -55,12 +52,13 @@ function displayModal(){
   cardModalImg.src=this.dataset.img
 }
 
-
+//Tis loop add an Eventlistener to each card 
 const cards=document.querySelectorAll(".card")
 for (const card of cards) {
  card.addEventListener("click",displayModal)
   
 }
+//modal Eventlistener
 cardModalContent.addEventListener("click",function(event){
   
  cardModal.classList.toggle("active")
